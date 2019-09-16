@@ -14,7 +14,7 @@ import buu.informatics.s59161075.aboutme.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private val myName:MyName = MyName("Chainarong Chantian")
+    private val myName:MyName = MyName("Chainarong Chantian", "fluke")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity() {
             nicknameEdit.visibility = View.GONE
             nicknameText.visibility = View.VISIBLE
             doneButton.visibility = View.GONE
+            invalidateAll()
 
             val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
